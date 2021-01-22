@@ -10,7 +10,19 @@
 bool isValidPoint(double x, double y, const std::vector<Rectangle> &obstacles)
 {
     // TODO: IMPLEMENT ME!!
-    return false;
+    
+    for(int i=0; i< obstacles.size();i++){
+    double x_max = obstacles[i].x + obstacles[i].width; // get x_max, y_max, x_min, y_min
+    double x_min = obstacles[i].x ;
+    double y_max = obstacles[i].y + obstacles[i].height;
+    double y_min = obstacles[i].y;
+    // if x_min <= x <=x_max and y_min <= y  <= y_max 
+    if ((x_min <= x) && (x<= x_max) && (y_min <= x) && (y<= y_max)){
+    	return false; // collides in the current obstacle
+    	}
+    }
+   
+    return true; // is a vaild point
 }
 
 // Intersect a circle with center (x,y) and given radius with the set of rectangles. If the circle lies outside of all
