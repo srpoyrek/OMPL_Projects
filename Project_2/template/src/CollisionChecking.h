@@ -44,7 +44,6 @@ bool isValidSquare(double x, double y, double theta, double sideLength, const st
 
 // Custom debugging/development code. Takes the list of robots, the list of
 // obstacles, and whether or not each configuation should be valid or not.
-void debugMode(const std::vector<Robot> &robots, const std::vector<Rectangle> &obstacles,
-               const std::vector<bool> &valid);
 
+void debugMode(const std::vector<Robot> &robots, const std::vector<Rectangle> &obstacles,const std::vector<bool> &valid);
 #endif

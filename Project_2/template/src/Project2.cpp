@@ -3,11 +3,12 @@
 // Project 2
 //////////////////////////////////////
 
+#include "CollisionChecking.h"
+
 #include <fstream>
 #include <iostream>
 #include <cstring>
 
-#include "CollisionChecking.h"
 
 // Retrieve a representation of the environment
 void getObstacles(std::vector<Rectangle> &obstacles)

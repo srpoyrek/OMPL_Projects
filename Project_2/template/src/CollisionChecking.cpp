@@ -1,28 +1,32 @@
 ///////////////////////////////////////
 // COMP/ELEC/MECH 450/550
 // Project 2
-// Authors: FILL ME OUT!!
+// Authors: Shreyas Poyrekar!!!!
 //////////////////////////////////////
 
 #include "CollisionChecking.h"
+
 
 // Intersect the point (x,y) with the set of rectangles. If the point lies outside of all obstacles, return true.
 bool isValidPoint(double x, double y, const std::vector<Rectangle> &obstacles)
 {
     // TODO: IMPLEMENT ME!!
+  for (int i = 0; i<obstacles.size(); i++)
+  // Check every obstacles in given workspace.
+  {
+  // get xmax, ymax, xmin, ymin
+    double xmin = obstacles[i].x;
+    double ymin = obstacles[i].y;
+    double xmax = xmin + obstacles[i].width;
+    double ymax = ymin + obstacles[i].height;
     
-    for(int i=0; i< obstacles.size();i++){
-    double x_max = obstacles[i].x + obstacles[i].width; // get x_max, y_max, x_min, y_min
-    double x_min = obstacles[i].x ;
-    double y_max = obstacles[i].y + obstacles[i].height;
-    double y_min = obstacles[i].y;
-    // if x_min <= x <=x_max and y_min <= y  <= y_max 
-    if ((x_min <= x) && (x<= x_max) && (y_min <= x) && (y<= y_max)){
+    // if xmin <= x <=xmax and ymin <= y  <= ymax 
+    if ((xmin <= x) && (x<= xmax) && (ymin <= y) && (y<= ymax)){
     	return false; // collides in the current obstacle
     	}
     }
    
-    return true; // is a vaild point
+    return true;
 }
 
 // Intersect a circle with center (x,y) and given radius with the set of rectangles. If the circle lies outside of all
