@@ -5,6 +5,12 @@
 #include <cmath>
 #include <iostream>
 
+struct Point 
+{ 
+    int x; 
+    int y; 
+};
+
 struct Rectangle
 {
     // Coordinate of the lower left corner of the rectangle
@@ -46,4 +52,5 @@ bool isValidSquare(double x, double y, double theta, double sideLength, const st
 // obstacles, and whether or not each configuation should be valid or not.
 
 void debugMode(const std::vector<Robot> &robots, const std::vector<Rectangle> &obstacles,const std::vector<bool> &valid);
+
 #endif

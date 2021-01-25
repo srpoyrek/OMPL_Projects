@@ -8,6 +8,7 @@
 #include <fstream>
 #include <iostream>
 #include <cstring>
+#include <iomanip>
 
 
 // Retrieve a representation of the environment
@@ -156,6 +157,10 @@ int main(int argc, char **argv)
     std::vector<Robot> robots;
     std::vector<bool> valid;
     bool debug = false;
+    
+    
+    std::cout << std::fixed;
+    std::cout << std::setprecision(5);
 
     // Read everything from the command line
     if (readOptions(argc, argv, robots, valid, debug))
@@ -172,7 +177,7 @@ int main(int argc, char **argv)
             std::vector<int> wrong;
 
             // Collision check everything
-            for (size_t i = 0; i < robots.size(); ++i)
+            for (size_t i = 0; i < robots.size() ; ++i) //robots.size()
             {
                 if (isValid(robots[i], obstacles) != valid[i])
                     wrong.push_back(i);
